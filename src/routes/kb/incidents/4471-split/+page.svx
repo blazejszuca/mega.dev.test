@@ -4,7 +4,7 @@ title: '#4471 is more than one problem'
 owner: Blazej
 status: closed
 reviewed: 2026-10-28
-signature: Blazej
+signature: v1.eyJzdWIiOiIyODk2IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMxNzYxMzgsImV4cCI6MTc5MzI2MjUzOH0.PE3d0X33WqINxOat1ggh-P_PqIXN8Ya05r5agv7DbDc
 ---
 
 <script>
