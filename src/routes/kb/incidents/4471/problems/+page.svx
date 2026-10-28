@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 is more than one problem'
 owner: Blazej
-status: draft
+status: closed
 reviewed: 2026-10-28
 signature: Blazej
 ---
@@ -38,6 +38,13 @@ Not one issue. Each problem below has its own ticket; fixing one does not fix th
 - **`hint`**: booking-v3 prints `MM/DD/YYYY` under its date field. Day-first tenants' customers
   type month first, and the form reads it day first. Same symptom, different code: the parser
   fix leaves it as it is. Only form reports from booking-v3 tenants.
+
+## Outcome
+
+Engineering closed #4471 on 5 October.
+
+- **`parser`**: fixed (`fix(dates): parse dd/mm for eu locales`).
+- **`hint`**: won't fix. The booking-v3 form is retired, so its hint goes with it.
 
 ## How to tell them apart
 

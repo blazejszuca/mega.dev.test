@@ -3,42 +3,42 @@
 		<link href="../../../_app/immutable/assets/runbook.9BJ9BomY.css" rel="stylesheet">
 		<link href="../../../_app/immutable/assets/Callout.89E4ZsOX.css" rel="stylesheet">
 		<link href="../../../_app/immutable/assets/5.Bh5v76EW.css" rel="stylesheet">
-		<link rel="modulepreload" href="../../../_app/immutable/entry/start.DETrEtpx.js">
-		<link rel="modulepreload" href="../../../_app/immutable/chunks/DB_X2djo.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/start.ppxbtwfM.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/DYhtthtQ.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/OUkhQVgo.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/ckwQM39j.js">
-		<link rel="modulepreload" href="../../../_app/immutable/entry/app.CpDMMg7_.js">
+		<link rel="modulepreload" href="../../../_app/immutable/entry/app.CT1Aqimr.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/B8TagHf_.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/BBiQsO4w.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/bUiQWyxm.js">
 		<link rel="modulepreload" href="../../../_app/immutable/nodes/0.pCjtogOv.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/ZxS--dmv.js">
-		<link rel="modulepreload" href="../../../_app/immutable/nodes/5.mnGwfkAN.js">
-		<link rel="modulepreload" href="../../../_app/immutable/chunks/DXjqwc_F.js">
+		<link rel="modulepreload" href="../../../_app/immutable/nodes/5.9mus-DBs.js">
+		<link rel="modulepreload" href="../../../_app/immutable/chunks/DwgGD2N_.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/CnOLKV4D.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/BDcFOay9.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/D6X4GVia.js">
 		<link rel="modulepreload" href="../../../_app/immutable/chunks/iXLSwIXB.js"><!--[--><!--]--><title>#4471 is more than one problem · support kb</title></head>
-<body><div style="display: contents"><!--[--><!--[--><!----><!----><div class="kb svelte-60g32v"><header><a class="crumb svelte-60g32v" href="/kb">support desk · kb</a> <h1 class="svelte-60g32v">#4471 is more than one problem</h1> <p class="meta svelte-60g32v"><span>owner <b>Blazej</b></span> <span class="status draft svelte-60g32v">draft</span> <span class="svelte-60g32v">reviewed 2026-10-28 · 0 days ago</span></p></header> <!--[!--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> was merged on subject lines (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>)
+<body><div style="display: contents"><!--[--><!--[--><!----><!----><div class="kb svelte-60g32v"><header><a class="crumb svelte-60g32v" href="/kb">support desk · kb</a> <h1 class="svelte-60g32v">#4471 is more than one problem</h1> <p class="meta svelte-60g32v"><span>owner <b>Blazej</b></span> <span class="status closed svelte-60g32v">closed</span> <span class="svelte-60g32v">reviewed 2026-10-28 · 0 days ago</span></p></header> <!--[!--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> was merged on subject lines (<a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a>)
 and marked known: one bug, one fix queued. Read by tenant and by way in, its reports split by
 cause; the table counts them. The queued parser fix closes only <code>parser</code>.</p> <aside class="warn svelte-hdh0t2"><!---->Not one issue. Each problem below has its own ticket; fixing one does not fix the others.<!----></aside><!----> <h2>What #4471 holds</h2> <p class="sum svelte-m5iqvo"><strong>412</strong> reports merged into #4471 · <strong>2</strong> problems</p> <table><thead><tr><th>problem</th><th>reports</th><th>tenants</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr><td><code>parser</code></td><td>379</td><td>11</td><td>2026-04-01 → 2026-10-04</td><td><!--[--><a href="https://github.com/blazejszuca/mega.dev.test/issues/1">#1</a><!--]--></td></tr><tr><td><code>hint</code></td><td>33</td><td>3</td><td>2026-04-17 → 2026-09-22</td><td><!--[--><a href="https://github.com/blazejszuca/mega.dev.test/issues/2">#2</a><!--]--></td></tr><!--]--></tbody></table> <!--[--><!--[--><p class="note svelte-m5iqvo">5 of the <code>parser</code> reports read as a one-day move; counted under <code>parser</code> by tenant.</p><!--]--><!--[!--><!--]--><!--]--><!----> <h2>The problems</h2> <ul><li><strong><code>parser</code></strong>: the shared parser reads every date month first. Day-first tenants get day and
 month swapped. Fixed by the queued parser fix.</li> <li><strong><code>hint</code></strong>: booking-v3 prints <code>MM/DD/YYYY</code> under its date field. Day-first tenants’ customers
 type month first, and the form reads it day first. Same symptom, different code: the parser
-fix leaves it as it is. Only form reports from booking-v3 tenants.</li></ul> <h2>How to tell them apart</h2> <p>Do not trust the intake tag: it is a guess from the reporter’s browser. Look up the tenant
+fix leaves it as it is. Only form reports from booking-v3 tenants.</li></ul> <h2>Outcome</h2> <p>Engineering closed #4471 on 5 October.</p> <ul><li><strong><code>parser</code></strong>: fixed (<code>fix(dates): parse dd/mm for eu locales</code>).</li> <li><strong><code>hint</code></strong>: won’t fix. The booking-v3 form is retired, so its hint goes with it.</li></ul> <h2>How to tell them apart</h2> <p>Do not trust the intake tag: it is a guess from the reporter’s browser. Look up the tenant
 (locale and booking form) and the channel, as <code>causes.ts</code> does. A report that reads as a one-day
 move still belongs to its tenant’s cause.</p> <!--[--><p class="stamp svelte-5qojh0">desk ref <b class="svelte-5qojh0">DR-7HMK-5MR7</b></p><!--]--><!----><!----></main> <footer class="svelte-60g32v">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_x1xl0b = {
+					__sveltekit_1m83d5p = {
 						base: new URL("../../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../../_app/immutable/entry/start.DETrEtpx.js"),
-						import("../../../_app/immutable/entry/app.CpDMMg7_.js")
+						import("../../../_app/immutable/entry/start.ppxbtwfM.js"),
+						import("../../../_app/immutable/entry/app.CT1Aqimr.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],
