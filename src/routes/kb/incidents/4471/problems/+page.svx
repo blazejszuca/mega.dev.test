@@ -1,7 +1,7 @@
 ---
 layout: runbook
-title: '#4471 is two problems, not one'
-owner: blazejszuca
+title: '#4471 is more than one problem'
+owner: Blazej
 status: draft
 reviewed: 2026-10-28
 signature: Blazej
@@ -14,8 +14,8 @@ signature: Blazej
 </script>
 
 [#4471](/kb/incidents/4471) was merged on subject lines ([decision 0001](/kb/decisions/0001-dedupe-by-subject))
-and marked known: one bug, one fix queued. Read by tenant and by way in, its reports are two
-problems. The queued parser fix closes only the first.
+and marked known: one bug, one fix queued. Read by tenant and by way in, its reports split by
+cause; the table counts them. The queued parser fix closes only `parser`.
 
 <Callout kind="warn">
 Not one issue. Each problem below has its own ticket; fixing one does not fix the others.
@@ -31,7 +31,7 @@ Not one issue. Each problem below has its own ticket; fixing one does not fix th
   }}
 />
 
-## The two problems
+## The problems
 
 - **`parser`**: the shared parser reads every date month first. Day-first tenants get day and
   month swapped. Fixed by the queued parser fix.
