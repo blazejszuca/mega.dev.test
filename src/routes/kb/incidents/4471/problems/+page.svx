@@ -1,6 +1,6 @@
 ---
 layout: runbook
-title: '#4471 is three problems, not one'
+title: '#4471 is two problems, not one'
 owner: blazejszuca
 status: draft
 reviewed: 2026-10-28
@@ -14,7 +14,7 @@ signature: blazejszuca
 </script>
 
 [#4471](/kb/incidents/4471) was merged on subject lines ([decision 0001](/kb/decisions/0001-dedupe-by-subject))
-and marked known: one bug, one fix queued. Read by tenant and by way in, its reports are three
+and marked known: one bug, one fix queued. Read by tenant and by way in, its reports are two
 problems. The queued parser fix closes only the first.
 
 <Callout kind="warn">
@@ -28,25 +28,21 @@ Not one issue. Each problem below has its own ticket; fixing one does not fix th
   filed={{
     parser: 'https://github.com/blazejszuca/mega.dev.test/issues/1',
     hint: 'https://github.com/blazejszuca/mega.dev.test/issues/2',
-    'one-day-move': 'https://github.com/blazejszuca/mega.dev.test/issues/3',
   }}
 />
 
-## The three problems
+## The two problems
 
 - **`parser`**: the shared parser reads every date month first. Day-first tenants get day and
   month swapped. Fixed by the queued parser fix.
 - **`hint`**: booking-v3 prints `MM/DD/YYYY` under its date field. Day-first tenants' customers
   type month first, and the form reads it day first. Same symptom, different code: the parser
   fix leaves it as it is. Only form reports from booking-v3 tenants.
-- **`one-day-move`**: the date moves by one day, or differs between people in different time
-  zones. Nothing is swapped. This is time-zone handling. The desk noted these reports
-  (`desk-notes.json`) but filed them under `parser`.
 
 ## How to tell them apart
 
 Do not trust the intake tag: it is a guess from the reporter's browser. Look up the tenant
-(locale and booking form) and the channel, as `causes.ts` does; then read the body for a
-one-day move.
+(locale and booking form) and the channel, as `causes.ts` does. A report that reads as a one-day
+move still belongs to its tenant's cause.
 
 <RenderStamp {signature} />
